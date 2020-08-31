@@ -48,7 +48,7 @@ The relevant framework files are included in the "testing-framework" folder. The
 Then save this chrome driver into "C:\E-Commerce-ProjectJS\testing-framework\web-drivers".
 5. Open terminal console and make sure you are in the root paht of the project, then install the dependencies by executing "npm install" command.
 
-## Instruction to run the tests:
+## Instructions to run the tests:
 1. Open terminal console and make sure you are in the root paht of the project, then run the tests by executing "npm run test" command.
 2. Pay attention while test runs in the browser.
 3. Once test finish to run, in the console terminal of your IDE, you can see the testing summary report, with its corresponding steps, validations and results.
