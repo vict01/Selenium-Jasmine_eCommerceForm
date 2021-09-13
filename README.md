@@ -1,21 +1,20 @@
-# Report to Customer Services - E-commerce
-## This is the test automation framework based on Javascript, NodeJS, Jasmine and Selenium-Webdriver used to create tests easily for report sending validation.
+# Testing the Etherscan Registration form
+# This is the test automation framework used to create tests easily to submit registration form.
 
 This framework is made up of the following tools:
 ```
-1. Javascript: The programing language to build the test logic.
-2. NodeJS: The Runtime environment that allows packaging and manage the dependencies.
-3. Jasmine: The testing framework that provides a BDD and easy-to-read syntax 
-4. Selenium webdriver: Framework used to automate the actions in the browser and locate elements.
+1. NodeJS: The Runtime environment that allows packaging and manage the dependencies.
+2. Jasmine: The testing framework that provides a BDD and easy-to-read syntax 
+3. Selenium webdriver: Framework used to automate the actions in the browser and locate elements.
 ```
 
 ## Framework Structure
-The relevant framework files are included in the "testing-framework" folder. The framework is based on Page Object model, so that inside the "testing-framework" folder there is a folder corresponding to each of the application pages (class folders) and additionally there is a folder (Components) that includes classes utilities, with specific functions that serve to build automated tests more easily. Finally it includes a folder to store the tests (Tests).
+The relevant framework files are included in the "testing-framework" folder. The framework is based on Page Object model, so that inside the "testing-framework" folder there is a subfolder corresponding to each of the application pages (page-object folders) and additionally there is a folder Components that includes utilities classes, with specific functions that serve to build automated tests more easily. Finally it includes a folder to store the tests (Tests).
 ##
 
 ### In each folder corresponding to each page or view there are:
 * A class of constants: which mainly includes the names, selectors and test data corresponding to that page.
-* A class of POs (Pege Objects) or Elements: that includes the webEments of that page.
+* A class of POs (Page Objects) or Elements: that includes the webEments of that page.
 * A class of helpers or methods: that includes the specific methods of that page.
 
 ### Within testing-framework/components:
@@ -33,30 +32,28 @@ The relevant framework files are included in the "testing-framework" folder. The
 
 * Wait helper: Includes methods where expected.
 
-### Within testing-framework/page-object/contact_page: 
+### Within testing-framework/page-object/main_page: 
 * Includes methods, elements and properties of the page to be tested.
 
 ### Within testing-framework/tests:
-* Includes the names of the different test suites to be executed.
-* happyPath.spec.js and negativeTests.spec.js
+* Includes the test to be executed.
 
 ## Test Scope and explanation:
 ```
-* happyPath.spec.js => Test in which all mandatory fields are filled out and the form is sent successfully. During this process each step is validated.
-
-* negativeTests.spec.js => Test in which only the email field is filled out and the form is prevented from sending. During this process each step is validated.
+* negativeTests.spec.js => An attempt is made to submit the form without completing the captcha.
+    - Note: Reusing the existing structure and components, other tests can easily be designed.
 ```
 
 ## Requirements Installation:
-1. Unzip the file "E-Commerce-ProjectJS.rar" and place it on disk C.
-2. Install Node JS.
-3. Add: this path: "C:\E-Commerce-ProjectJS\testing-framework\web-drivers" in the PATH environment variable. 
-4. Make sure the chrome browser version which you have installed and download the corresponding chrome driver for it. You can download from here: https://chromedriver.chromium.org/downloads.
-Then save this chrome driver into "C:\E-Commerce-ProjectJS\testing-framework\web-drivers".
-#### Note: For this test it was used Chrome browser version 84, therefore if you have this version you don't need to do the step 4. 
-5. Open terminal console and make sure you are in the root paht of the project, then install the dependencies by executing "npm install" command.
+1. Open terminal console and make sure you are in the root path of the project, and run the command below to install any possible dependencies.
+   - npm i
+2. In system environment variables, add this line within the path variable: 
+    "{originPath}\Selenium-Jasmine_webSiteForm\testing-framework\web-drivers" 
+    - Where "originPath" is the place where the project was downloaded/saved.
+4. The chrome browser version corresponding to the chrome driver installed, it's 93. If you're using different chrome browser version, You can download the corresponding chrome driver from here: https://chromedriver.chromium.org/downloads.
+    Then save this chrome driver inte path mentioned in the previous step.
 
 ## Instructions to run the tests:
-1. Open terminal console and make sure you are in the root paht of the project, then run the tests by executing "npm run test" command.
-2. Pay attention while test runs in the browser. Both test mentioned in the Test Scope section will run one after the other, with a small interval of time between them.
-3. Once test finish to run, in the console terminal of your IDE, you can see the testing summary report, with its corresponding steps, validations and results.
+1. Open terminal console and make sure you are in the root paht of the project, then run the tests by executing "npm test" command.
+2. Pay attention while test runs in the browser.
+3. Once test finishes to run, in the console terminal you can see the, you can see the testing workflow, with its corresponding steps, validations and final result.

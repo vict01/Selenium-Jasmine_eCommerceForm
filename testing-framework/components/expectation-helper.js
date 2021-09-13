@@ -23,7 +23,7 @@ class ExpectationHelper {
             expect(currentText).toContain(val)
         });
     }
-
+ 
     async verifyElementDisplayed(element) {
         await WaitHelper.implicitWait(CommonConstant.commonData.implicitWaitDefaultTimeout);
         element.isDisplayed().then(function(isDisplayed) {
@@ -31,15 +31,16 @@ class ExpectationHelper {
         });
     }
 
+    async verifyElementIsNotDisplayed(element) {
+        await WaitHelper.implicitWait(CommonConstant.commonData.implicitWaitDefaultTimeout);
+        element.isDisplayed().then(function(isDisplayed) {
+            expect(isDisplayed).toBeFalse();
+        });
+    }
+
     async verifyStringAreEquals(stringOne, stringTwo) {
         expect(stringOne).toEqual(stringTwo)
     }
 
-    async verifyElementPresent(element) {
-        await WaitHelper.implicitWait(CommonConstant.commonData.implicitWaitDefaultTimeout);
-        element.isDisplayed().then(function(isDisplayed) {
-            expect(isDisplayed).toBeTrue();
-        });
-    }
 }
 module.exports = new ExpectationHelper();

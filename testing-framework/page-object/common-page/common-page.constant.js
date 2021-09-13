@@ -1,7 +1,7 @@
 class CommonConstant {
     get commonData() {
         return {
-            applicationUrl: 'http://automationpractice.com/index.php?controller=contact',
+            applicationUrl: 'https://etherscan.io/register',
             defaultTimeout: 45000,
             implicitWaitDefaultTimeout: 30000,
         }
