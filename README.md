@@ -50,11 +50,7 @@ The relevant framework files are included in the "testing-framework" folder. The
 ## Requirements Installation:
 1. Unzip the file "E-Commerce-ProjectJS.rar" and place it on disk C.
 2. Install Node JS.
-3. Add: this path: "C:\E-Commerce-ProjectJS\testing-framework\web-drivers" in the PATH environment variable. 
-4. Make sure the chrome browser version which you have installed and download the corresponding chrome driver for it. You can download from here: https://chromedriver.chromium.org/downloads.
-Then save this chrome driver into "C:\E-Commerce-ProjectJS\testing-framework\web-drivers".
-#### Note: For this test it was used Chrome browser version 84, therefore if you have this version you don't need to do the step 4. 
-5. Open terminal console and make sure you are in the root paht of the project, then install the dependencies by executing "npm install" command.
+3. Run `npm i` to install dependencies
 
 ## Instructions to run the tests:
 1. Open terminal console and make sure you are in the root paht of the project, then run the tests by executing "npm run test" command.
